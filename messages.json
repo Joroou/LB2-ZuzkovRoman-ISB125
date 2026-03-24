@@ -1,0 +1,27 @@
+[
+  {
+    "from_id": "user1",
+    "to_id": "user2",
+    "text": "Привет"
+  },
+  {
+    "from_id": "user2",
+    "to_id": "user1",
+    "text": "Йоу"
+  },
+  {
+    "from_id": "User1",
+    "to_id": "User2",
+    "text": "Привет"
+  },
+  {
+    "from_id": "user1",
+    "to_id": "user2",
+    "text": "123"
+  },
+  {
+    "from_id": "user2",
+    "to_id": "user1",
+    "text": "123"
+  }
+]

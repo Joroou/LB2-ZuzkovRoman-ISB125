@@ -1,0 +1,4 @@
+user1|user2|Привет
+user1|user2|Привет номер 2
+user1|user2|history
+user1|user2|exit
