@@ -50,7 +50,6 @@ class MessageServer:
         return message
 
     def recv_line(self, sock):
-        """Читает строку из сокета до символа \n."""
         data = b''
         while True:
             chunk = sock.recv(1)
@@ -73,7 +72,6 @@ class MessageServer:
                     continue
 
                 if command == 'GET_HISTORY':
-                    # ожидаем две строки: user_id и target_id
                     user_id = self.recv_line(client_socket)
                     target_id = self.recv_line(client_socket)
                     if user_id is None or target_id is None:
@@ -87,7 +85,6 @@ class MessageServer:
                     client_socket.send(response.encode('utf-8'))
 
                 elif command == 'SEND_MESSAGE':
-                    # ожидаем три строки: from_id, to_id, text
                     from_id = self.recv_line(client_socket)
                     to_id = self.recv_line(client_socket)
                     text = self.recv_line(client_socket)
