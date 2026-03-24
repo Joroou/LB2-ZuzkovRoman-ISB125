@@ -19,7 +19,6 @@ class MessengerClient:
             return False
 
     def send_command(self, cmd, *lines):
-        """Отправляет команду и строки аргументов, каждая заканчивается \n."""
         try:
             self.socket.send(f"{cmd}\n".encode('utf-8'))
             for line in lines:
@@ -30,7 +29,6 @@ class MessengerClient:
             return False
 
     def recv_line(self):
-        """Читает строку из сокета до \n."""
         data = b''
         while True:
             chunk = self.socket.recv(1)
@@ -46,7 +44,6 @@ class MessengerClient:
             return []
         if not self.send_command("GET_HISTORY", self.user_id, self.target_id):
             return []
-        # Читаем ответ: первая строка OK <count>
         response_line = self.recv_line()
         if response_line is None:
             print("Сервер разорвал соединение.")
